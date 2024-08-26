@@ -1,1 +1,1 @@
-# Cupepedia
+# cubepedia
