@@ -1,1 +1,1 @@
-# cupepedia
+# Cupepedia
