@@ -2,7 +2,7 @@
     <div class="col" id="{{$section->title}}">
         <h3>{{$section->title}}</h3>
         <hr />
-        <p>{{$section->content}}</p>
+        <p>{!!$section->content!!}</p>
     </div>
     @if ($images && count($images) == 1)
         <div class="text-end  col-md-4 col-lg-3 col-xl-3">
