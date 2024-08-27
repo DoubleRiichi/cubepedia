@@ -8,7 +8,7 @@
 
 <div class="row">
     <div class="col">
-        <p>{{$article->intro}}</p>
+        {!!$article->intro!!}
     </div>
 </div>
 
