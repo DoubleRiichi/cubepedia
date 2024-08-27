@@ -20,3 +20,4 @@ yarn-error.log
 /.vscode
 /cubepedia.db
 /.env.example
+test.png

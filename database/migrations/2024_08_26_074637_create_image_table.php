@@ -17,6 +17,8 @@ return new class extends Migration
             $table->string("text", 2000)->nullable();
             $table->string("description", 150);
             $table->foreignId("section_id")->references("id")->on("section");
+            // $table->foreignId("section_index")->references("index")->on("section");
+
             $table->timestamps();
         });
     }
