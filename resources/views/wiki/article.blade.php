@@ -2,8 +2,7 @@
 
 @section("main")
 <div class="p-3">
-        <x-articlec :$article :$summary/>
-
+        <x-articlec :$article :$summary :image="$article_image" />
 
         @if($sections)
             @foreach ($sections as $section)
@@ -11,6 +10,6 @@
                 <x-sectionc :$section :images="$imgs"/>
             @endforeach
         @endif
-        @endsection
     
 </div>
+@endsection

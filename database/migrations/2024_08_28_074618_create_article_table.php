@@ -11,12 +11,14 @@ return new class extends Migration
      */
     public function up(): void
     {
+        
         Schema::create('article', function (Blueprint $table) {
             $table->id();
             $table->string("title", 255);
             $table->mediumText("intro");
             $table->boolean("locked");
-
+            $table->foreignId('user_id')->references('id')->on("user");
+            $table->foreignId('editor_id')->references('id')->on("user");
             $table->timestamps();
 
         });

@@ -1,12 +1,11 @@
-<div class="container-fluid">
-    <div class="row flex-nowrap">
- 
-    <div class="container-fluid p-0 d-flex h-100">
+
+    <div class="container-fluid p-0 d-flex flex-grow-1">
         <div id="bdSidebar" 
              class="d-flex flex-column 
                     flex-shrink-0 
                     p-3 bg-success
-                    text-white offcanvas-md offcanvas-start">
+                    text-white offcanvas-md offcanvas-start"
+                    >
             <a href="#" 
                class="navbar-brand">
             </a>
@@ -15,8 +14,10 @@
     @if(Auth::check())
 
         <a href="#" class="d-flex align-items-center link-light text-decoration-none" id="dropdownUser2" data-bs-toggle="dropdown" aria-expanded="false">  <!--  dropdown-toggle -->
-            <img src="https://github.com/mdo.png" alt="" width="32" height="32" class="rounded-circle me-2">
-            <span class="nav-item"><strong>mdo</strong></span>
+        <div class="col border text-dark bg-light p-2">
+            <img src="{{asset("storage/" . Auth::user()->avatar)}}" alt="" width="32" height="32" class="border border-1  border-dark  me-2">
+            <span class="nav-item"><strong>{{Auth::user()->username}}</strong></span>
+        </div>
         </a>
     @else
         <span class="text-light">Hello, anonymous!</span>
@@ -32,7 +33,7 @@
             <hr>
             <ul class="mynav nav nav-pills flex-column mb-auto">
                 <li class="nav-item mb-1">
-                    <a href="#">
+                    <a href="/">
                         <i class="fa-solid fa-house"></i>
                         Home
                     </a>
@@ -58,7 +59,7 @@
                     </a>
                 </li>
                 <li class="nav-item mb-1">
-                    <a href="#">
+                    <a href="/random">
                         <i class="fa-solid fa-graduation-cap"></i>
                         Random Article
                     </a>
@@ -79,7 +80,7 @@
                     </a>
                 </li>
                 <li class="nav-item mb-1">
-                    <a href="#">
+                    <a href="/auth/logout">
                     <i class="fas fa-sign-out-alt pe-2"></i>
                         Logout
                     </a>
@@ -87,13 +88,13 @@
 @else
 
                 <li class="nav-item mb-1">
-                    <a href="#">
+                    <a href="/auth/login">
                     <i class="fas fa-sign-in-alt pe-2"></i>
                         Login
                     </a>
                 </li>
                 <li class="nav-item mb-1">
-                    <a href="#">
+                    <a href="/auth/register">
                     <i class="fas fa-user-plus pe-2"></i>
                         Register
                     </a>
@@ -170,4 +171,4 @@
                 </nav>
 
                 <hr>
-        <div class="col py-3">
+        <div class="col py-3 scroll-area">
