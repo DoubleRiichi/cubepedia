@@ -13,10 +13,12 @@ return new class extends Migration
     {
         Schema::create('image', function (Blueprint $table) {
             $table->id();
-            $table->string("path", 4095); //linux file path limit is 4095 (+1 NULL terminator character)
+            $table->string("path", 512);
             $table->string("text", 2000)->nullable();
             $table->string("description", 150);
-            $table->foreignId("section_id")->references("id")->on("section");
+            $table->foreignId("section_id")->nullable()->references("id")->on("section");
+            $table->foreignId("article_id")->nullable()->references("id")->on("article");
+
             // $table->foreignId("section_index")->references("index")->on("section");
 
             $table->timestamps();

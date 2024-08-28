@@ -1,6 +1,7 @@
 <?php
 
 namespace App\Http\Controllers;
+use Illuminate\Support\Facades\DB;
 
 use Illuminate\Http\Request;
 use App\Models\Article;
@@ -25,6 +26,8 @@ class ArticleController extends Controller
             abort(404);
         }
         $article->intro = $this->markdownService->parse($article->intro);
+        $article_image = Image::where("article_id", "=", $article->id)->first();
+
         $sections = Section::where("article_id", "=", $article->id)->get();
         $summary = [];
         $images = [];
@@ -38,6 +41,6 @@ class ArticleController extends Controller
             }
         }
 
-        return view("wiki.article", compact("article", "sections", "summary", "images"));
+        return view("wiki.article", compact("article", "article_image", "sections", "summary", "images"));
     }
 }

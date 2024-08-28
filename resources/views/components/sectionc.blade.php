@@ -1,7 +1,12 @@
 <div class="row pt-4">
     <div class="col" id="{{$section->title}}">
-        <h3>{{$section->title}}</h3>
+    <h3>{{$section->title}}</h3>
         <hr />
+    </div>
+</div>
+
+<div class="row">
+    <div class="col">
         <p>{!!$section->content!!}</p>
     </div>
     @if ($images && count($images) == 1)
@@ -19,7 +24,7 @@
 <div class="row border bg-light justify-content-center">
         
         @foreach ($images as $img)
-        <div class="col-md-4 col-lg-3 col-xl-3 text-center text-bottom">
+        <div class="col-md-4 col-lg-3 col-xl-2 text-center text-bottom">
             
             <img class="img-thumbnail object-fit-contain img-fluid" src="{{$img->path}}" alt="{{$img->description}}">
             <p class="fs-6 fst-italic">{{$img->description}}</p>

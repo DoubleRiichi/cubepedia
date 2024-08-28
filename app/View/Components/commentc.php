@@ -14,8 +14,7 @@ class commentc extends Component
      * Create a new component instance.
      */
     public function __construct(
-        public User $user,
-        public Comment $comment,
+        public $comments
     )
     {}
 
