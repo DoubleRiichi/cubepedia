@@ -20,8 +20,8 @@ class DiscussionController extends Controller
     }
     public function show($title, $id) {
 
-        $comments = DB::table("comment")->where("")
-                            ->join("article", 'comment.article_id', "=", "article.id")
+        $comments = DB::table("comment")
+                            ->join("article", $title, "=", "article.title")
                             ->join("user", "comment.user_id", "=", "user.id")
                             ->select("comment.*", "article.id", "article.title", "user.username", "user.avatar", "user.status")->orderByDesc("article.updated_at")->get();
 
@@ -29,11 +29,12 @@ class DiscussionController extends Controller
             $comment->post = $this->markdownService->parse($comment->post);
         }
 
-        return view("wiki.discussion", compact("comments", "title"));
+
+        return view("wiki.discussion", compact("comments", "title", "id"));
     }
 
     public function post(Request $request) {
-        
+
         if(!Auth::check()) {
             return redirect()->back()->withErrors("You cannot write a comment without being logged in.");
         }
@@ -54,7 +55,7 @@ class DiscussionController extends Controller
             "user_id" => $user_id,
             "article_id" => $request->article_id
         ]);
-        
-  
+
+        return redirect()->back();
     }
 }
