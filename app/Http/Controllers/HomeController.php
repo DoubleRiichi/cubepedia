@@ -35,6 +35,13 @@ class HomeController extends Controller
                             ->select("comment.*", "user.avatar", "user.username", "article.title")->limit(10)->orderByDesc("comment.created_at")->get();
 
 
+        foreach ($recent_comments as $comment) {
+            $comment->post = $this->markdownService->parse($comment->post);
+        }
+        
+        foreach ($recent_articles as $article) {
+            $article->intro = $this->markdownService->parse($article->intro);
+        }
 
         return view("index", compact("recent_articles", "recent_comments"));
     }

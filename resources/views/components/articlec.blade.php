@@ -4,13 +4,13 @@
         <hr />
     </div>
     <div class="col text-end">
-        <a class="tab" href="/wiki/{{$article->title}}/{{$article->id}}/discussion">Discussion</a>
+        <a class="tab" href="/wiki/{{$article->id}}/discussion">Discussion</a>
     </div>
 </div>
 
 <div class="row">
     <div class="col">
-        {!!$article->intro!!}
+        {!! nl2br($article->intro) !!}
     </div>
 @if($image)
     <div class="text-end col-md-4 col-lg-3 col-xl-2 text-center px-0">

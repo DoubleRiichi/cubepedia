@@ -67,7 +67,7 @@
 @if(Auth::check())
     @if(Auth::user()->status == "admin")
                 <li class="nav-item mb-1">
-                    <a href="#">
+                    <a href="/admin/pannel">
                     <i class="fas fa-cog pe-2"></i>
                         Moderation
                     </a>

@@ -8,9 +8,9 @@
       <div class="col">Description</div>
 </div>
 
-@foreach ($article as $item)
+@foreach ($articles as $item)
       <div class="row text-center border-dark border-bottom ">
-            <div class="col  p-2"><a href="wiki/{{$item->title}}">{{$item->title}}</a></div>
+            <div class="col  p-2"><a href="/wiki/{{$item->title}}">{{$item->title}}</a></div>
             <div class="col  p-2">{{$item->username}}</div>
             <div class="col  p-2">{{$item->created_at}}</div>
             <div class="col  p-2">{{$item->updated_at}}</div>
@@ -21,7 +21,7 @@
             <div class="col">
             <div class="collapse" id="article-{{$item->id}}">
                   <div class="card card-body">
-                  {!!$item->intro!!}
+                  {!! nl2br($item->intro)!!}
             </div>
             </div>
             </div>
