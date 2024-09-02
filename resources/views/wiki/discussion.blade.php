@@ -12,7 +12,17 @@
 <hr>
 
 @if(Auth::check())
-    <x-commentformc :$id />
+<div class="row my-2">
+    <div class="col">
+        <button class="btn btn-success" type="button" data-bs-toggle="collapse" data-bs-target="#commentForm"  aria-expanded="false" aria-controls="commentForm">Add Comment...</button>
+    </div>
+</div>
+
+<div class="collapse mb-3" id="commentForm">
+    <div class="card card-body">
+        <x-commentformc :$id route="/wiki/discussion/post"/>
+    </div>
+</div>
 @endif
 
 <x-commentc :$comments/>

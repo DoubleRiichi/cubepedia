@@ -6,7 +6,7 @@
     <div class="col">
         <h2>Recent Articles</h2>
         <hr>
-        <x-articlepillc :article="$recent_articles" />
+        <x-articlepillc :articles="$recent_articles" />
     </div>
 </div>
 

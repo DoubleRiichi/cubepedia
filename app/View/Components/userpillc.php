@@ -6,15 +6,14 @@ use Closure;
 use Illuminate\Contracts\View\View;
 use Illuminate\View\Component;
 
-class commentformc extends Component
+class userpillc extends Component
 {
     /**
      * Create a new component instance.
      */
     public function __construct(
-        public $id,
-        public $route = "" 
-        )
+        public $users
+    )
     {
         //
     }
@@ -24,6 +23,6 @@ class commentformc extends Component
      */
     public function render(): View|Closure|string
     {
-        return view('components.commentformc');
+        return view('components.userpillc');
     }
 }

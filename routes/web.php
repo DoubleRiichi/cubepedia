@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\AdminPannelController;
 use App\Http\Controllers\DiscussionController;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers;
@@ -22,5 +23,10 @@ Route::get("/auth/register",  [RegisterController::class, "show"]);
 Route::post("/auth/register", [RegisterController::class, "register"]);
 
 
-Route::get("/wiki/{title}/{id}/discussion/", [DiscussionController::class, "show"]);
+Route::get("/wiki/{id}/discussion", [DiscussionController::class, "show"]);
 Route::post("/wiki/discussion/post",   [DiscussionController::class, "post"]);
+Route::get("/wiki/discussion/delete/{id}", [DiscussionController::class, "delete"]);
+Route::post("/wiki/discussion/update", [DiscussionController::class, "update"]);
+
+
+Route::get("/admin/pannel", [AdminPannelController::class, "show"]);

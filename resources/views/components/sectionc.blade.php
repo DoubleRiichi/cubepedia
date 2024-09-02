@@ -7,7 +7,7 @@
 
 <div class="row">
     <div class="col">
-        <p>{!!$section->content!!}</p>
+        <p>{!! nl2br($section->content) !!}</p>
     </div>
     @if ($images && count($images) == 1)
         <div class="text-end  col-md-4 col-lg-3 col-xl-3">
