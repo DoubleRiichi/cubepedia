@@ -2,11 +2,12 @@
     <div class="col">
         @foreach ($comments as $comment)
 
-                @if (Auth::id() == $comment->user_id || Auth::user()->status == "admin")
                 <div class="row border border-1 bg-white">
                     <div class="col text-start fw-lighter mt-0">
                         {{$comment->created_at}} {{$comment->updated_at}}
                     </div>
+                    @if (Auth::check() && (Auth::id() == $comment->user_id || Auth::user()->status == "admin"))
+
                     <div class="col text-end my-0">
                         <a data-bs-toggle="collapse" href="#commentForm-{{$comment->id}}" role="button" aria-expanded="false" aria-controls="commentForm-{{$comment->id}}">edit</a>
                         <a href="/wiki/discussion/delete/{{$comment->id}}">delete</a>

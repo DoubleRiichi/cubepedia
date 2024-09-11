@@ -13,7 +13,7 @@
             <div class="dropdown">
     @if(Auth::check())
 
-        <a href="#" class="d-flex align-items-center link-light text-decoration-none" id="dropdownUser2" data-bs-toggle="dropdown" aria-expanded="false">  <!--  dropdown-toggle -->
+        <a href="/profile/{{Auth::user()->username}}" class="d-flex align-items-center link-light text-decoration-none">  <!--  dropdown-toggle -->
         <div class="col border text-dark bg-light p-2">
             <img src="{{asset("storage/" . Auth::user()->avatar)}}" alt="" width="32" height="32" class="border border-1  border-dark  me-2">
             <span class="nav-item"><strong>{{Auth::user()->username}}</strong></span>
@@ -67,7 +67,7 @@
 @if(Auth::check())
     @if(Auth::user()->status == "admin")
                 <li class="nav-item mb-1">
-                    <a href="/admin/pannel">
+                    <a href="/admin/panel">
                     <i class="fas fa-cog pe-2"></i>
                         Moderation
                     </a>

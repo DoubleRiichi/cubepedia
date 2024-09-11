@@ -2,6 +2,7 @@
 
 use App\Http\Controllers\AdminPannelController;
 use App\Http\Controllers\DiscussionController;
+use App\Http\Controllers\UserProfileController;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers;
 use App\Http\Controllers\ArticleController;
@@ -29,4 +30,6 @@ Route::get("/wiki/discussion/delete/{id}", [DiscussionController::class, "delete
 Route::post("/wiki/discussion/update", [DiscussionController::class, "update"]);
 
 
-Route::get("/admin/pannel", [AdminPannelController::class, "show"]);
+Route::get("/admin/panel", [AdminPannelController::class, "show"]);
+
+Route::get("/profile/{username}", [UserProfileController::class, "show"]);
