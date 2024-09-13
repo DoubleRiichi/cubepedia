@@ -1,6 +1,8 @@
 <?php
 
+use App\Http\Controllers\AdminActionController;
 use App\Http\Controllers\AdminPannelController;
+use App\Http\Controllers\AdminSearchController;
 use App\Http\Controllers\DiscussionController;
 use App\Http\Controllers\UserProfileController;
 use Illuminate\Support\Facades\Route;
@@ -31,5 +33,12 @@ Route::post("/wiki/discussion/update", [DiscussionController::class, "update"]);
 
 
 Route::get("/admin/panel", [AdminPannelController::class, "show"]);
+Route::post("/admin/ban", [AdminActionController::class, "ban"]);
+Route::post("/admin/unban", [AdminActionController::class, "unban"]);
+Route::post("/admin/lock", [AdminActionController::class, "lock"]);
+Route::post("/admin/unlock", [AdminActionController::class, "unlock"]);
 
-Route::get("/profile/{username}", [UserProfileController::class, "show"]);
+Route::get("/admin/search", [AdminSearchController::class, "show"]);
+Route::post("/admin/search", [AdminSearchController::class, "search"]);
+
+Route::get("/profile/{username}", [UserProfileController::class, "show"]);  

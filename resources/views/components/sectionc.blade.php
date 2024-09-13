@@ -6,7 +6,7 @@
 </div>
 
 <div class="row">
-    <div class="col">
+    <div class="col border border-1 p-2" style="background-color: white;">
         <p>{!! nl2br($section->content) !!}</p>
     </div>
     @if ($images && count($images) == 1)

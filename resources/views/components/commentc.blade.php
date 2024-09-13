@@ -17,7 +17,7 @@
                     <div class="col">
                         <div class="collapse mb-3" id="commentForm-{{$comment->id}}">
                             <div class="card card-body">
-                                <x-commentformc id="{{$comment->id}}" route="/wiki/discussion/update"/>
+                                <x-commentformc id="{{$comment->id}}" route="/wiki/discussion/update" text="{{$comment->post}}"/>
                             </div>
                         </div>
                     </div>  

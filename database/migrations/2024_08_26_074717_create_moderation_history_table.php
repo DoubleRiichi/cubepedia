@@ -14,7 +14,7 @@ return new class extends Migration
         Schema::create('moderation_history', function (Blueprint $table) {
             $table->id();
             $table->enum("action", ["ban", "unban", "lock", "unlock", "delete", "revert"]);
-            $table->foreignId("section_id")->nullable()->references("id")->on("section");
+            $table->string("comment", 2000);
             $table->foreignId("user_id")->nullable()->references("id")->on("user");
             $table->timestamps();
         });

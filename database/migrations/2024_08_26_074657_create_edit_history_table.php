@@ -15,8 +15,7 @@ return new class extends Migration
             $table->id();
             $table->mediumText("old_text");
             $table->mediumText("new_text");
-            $table->foreignId("section_id")->nullable()->references("id")->on("section");
-            $table->foreignId("article_id")->nullable()->references("id")->on("section");
+            $table->foreignId("section_id")->references("id")->on("section");
             $table->foreignId("user_id")->references("id")->on("user");
             $table->timestamps();
         });
