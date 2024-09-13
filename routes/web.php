@@ -1,7 +1,10 @@
 <?php
 
+use App\Http\Controllers\AdminActionController;
 use App\Http\Controllers\AdminPannelController;
+use App\Http\Controllers\AdminSearchController;
 use App\Http\Controllers\DiscussionController;
+use App\Http\Controllers\UserProfileController;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers;
 use App\Http\Controllers\ArticleController;
@@ -29,4 +32,13 @@ Route::get("/wiki/discussion/delete/{id}", [DiscussionController::class, "delete
 Route::post("/wiki/discussion/update", [DiscussionController::class, "update"]);
 
 
-Route::get("/admin/pannel", [AdminPannelController::class, "show"]);
+Route::get("/admin/panel", [AdminPannelController::class, "show"]);
+Route::post("/admin/ban", [AdminActionController::class, "ban"]);
+Route::post("/admin/unban", [AdminActionController::class, "unban"]);
+Route::post("/admin/lock", [AdminActionController::class, "lock"]);
+Route::post("/admin/unlock", [AdminActionController::class, "unlock"]);
+
+Route::get("/admin/search", [AdminSearchController::class, "show"]);
+Route::post("/admin/search", [AdminSearchController::class, "search"]);
+
+Route::get("/profile/{username}", [UserProfileController::class, "show"]);  

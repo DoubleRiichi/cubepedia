@@ -29,6 +29,14 @@ class AdminPannelController extends Controller
 
         $moderation_history = DB::table("moderation_history")->orderBy("created_at")->get();
 
+        
+        foreach ($comments as $comment) {
+            $comment->post = $this->markdownService->parse($comment->post);
+        }
+        
+        foreach ($articles as $article) {
+            $article->intro = $this->markdownService->parse($article->intro);
+        }
 
         return view("/admin/pannel", compact("users", "comments", "articles", "moderation_history"));
     }
