@@ -1,0 +1,8 @@
+.thead-success th {
+    background-color: #198754;
+    color: white;
+}
+
+th {
+    height: 50px;
+}

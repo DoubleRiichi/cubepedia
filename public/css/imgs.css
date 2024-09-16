@@ -1,0 +1,15 @@
+.img-container {
+    width: 200px;
+    
+}
+
+.container {
+    height: 200px;
+}
+
+.container img {
+    display: block;
+    width: auto;
+    max-height: 100%;
+  }
+
