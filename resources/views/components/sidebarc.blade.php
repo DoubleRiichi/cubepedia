@@ -1,4 +1,5 @@
 
+
     <div class="container-fluid p-0 d-flex flex-grow-1">
         <div id="bdSidebar" 
              class="d-flex flex-column 
@@ -65,7 +66,7 @@
                     </a>
                 </li>
                 <li class="nav-item mb-1">
-                    <a href="/admin/search">
+                    <a href="/search">
                     <i class="fas fa-search pe-2"></i>
                         Search
                     </a>
@@ -169,12 +170,13 @@
                         <li class="breadcrumb-item">
                             <i class="fa-solid fa-house"></i>
                         </li>
-                        @foreach ($current_url as $url_part)
-                        <li class="breadcrumb-item">{{$url_part}}</li>
-                        @endforeach
+                        @if(isset($current_url))
+                            @foreach ($current_url as $url_part)
+                            <li class="breadcrumb-item">{{$url_part}}</li>
+                            @endforeach
+                        @endif
   
                     </ol>
                 </nav>
-
-                <hr>
+<hr>
         <div class="col py-3 scroll-area">

@@ -38,7 +38,7 @@ Route::post("/admin/unban", [AdminActionController::class, "unban"]);
 Route::post("/admin/lock", [AdminActionController::class, "lock"]);
 Route::post("/admin/unlock", [AdminActionController::class, "unlock"]);
 
-Route::get("/admin/search", [AdminSearchController::class, "show"]);
-Route::post("/admin/search", [AdminSearchController::class, "search"]);
+Route::get("/search", [AdminSearchController::class, "show"]);
+Route::post("/search", [AdminSearchController::class, "search"]);
 
 Route::get("/profile/{username}", [UserProfileController::class, "show"]);  

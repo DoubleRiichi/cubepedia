@@ -5,26 +5,26 @@
             <div class="row mb-4">
                 <div class="col">
                 <label for="username">Username :</label>
-                <input type="text" name="username" placeholder="username" id="" required>
+                <input class="form-control" type="text" name="username" placeholder="username" id="" required>
                 </div>   
             </div>
             <div class="row mb-4">
                 <div class="col">
                 <label for="email">Email :</label>
-                <input type="email" name="email" placeholder="email" id="" required>
+                <input class="form-control" type="email" name="email" placeholder="email" id="" required>
                 </div>   
             </div>
             <div class="row mb-4">
                 <div class="col">
                 <label for="password">Password :</label>
-                <input type="password" id="password" name="password" placeholder="password" required>
+                <input class="form-control" type="password" id="password" name="password" placeholder="password" required>
                 </div>
             </div>
 
             <div class="row mb-4">
                 <div class="col">
                     <label for="password_confirmation">Confirm Password</label>
-                    <input type="password" id="password_confirmation" name="password_confirmation" required>
+                    <input class="form-control" type="password" id="password_confirmation" name="password_confirmation" required>
                 </div>
             </div>
 
@@ -37,7 +37,7 @@
 
             <div class="row">
                 <div class="col">
-                    <button type="submit">Register</button>
+                    <button class="btn btn-success" type="submit">Register</button>
                 </div>
             </div>
         </form>
