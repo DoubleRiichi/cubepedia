@@ -9,16 +9,15 @@ function userSearch() {
     <input class="form-control" type="date" name="dateBefore">
     
     <label for="dateAfter">Registered after :</label>
-    <input class="form-control" type="date" name="dateAfter">
+    <input class="form-control " type="date" name="dateAfter">
     
-    <select class="form-select" name="status">
+    <select class="form-select my-4" name="status">
         <option value="none" selected>Select a role :</option>
         <option value="user">User</option>
         <option value="editor">Editor</option>
         <option value="banned">Banned</option>
         <option value="admin">Admin</option>
     </select>
-
     `
 }
 

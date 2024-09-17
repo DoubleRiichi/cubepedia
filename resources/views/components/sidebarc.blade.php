@@ -64,6 +64,12 @@
                         Random Article
                     </a>
                 </li>
+                <li class="nav-item mb-1">
+                    <a href="/admin/search">
+                    <i class="fas fa-search pe-2"></i>
+                        Search
+                    </a>
+                </li>
 @if(Auth::check())
     @if(Auth::user()->status == "admin")
                 <li class="nav-item mb-1">
