@@ -9,7 +9,7 @@ use Illuminate\Support\Facades\DB;
 class RandomArticleController extends Controller
 {
 
-    function show() {
+    public function show() {
 
         while(true) {
             $latest = DB::table("article")->select("id")->limit(1)->orderByDesc("id")->first();

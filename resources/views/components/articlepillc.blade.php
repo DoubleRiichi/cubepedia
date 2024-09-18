@@ -12,8 +12,8 @@
             <div class="row text-center border-dark border-bottom ">
                   <div class="col  p-2"><a href="/wiki/{{$item->title}}">{{$item->title}}</a></div>
                   <div class="col  p-2"><a href="/profile/{{$item->username}}">{{$item->username}}</a></div>
-                  <div class="col  p-2">{{$item->created_at}}</div>
-                  <div class="col  p-2">{{$item->updated_at}}</div>
+                  <div class="col  p-2">{{$item->created_at->format("d/m/Y H:m:s")}}</div>
+                  <div class="col  p-2">{{$item->updated_at->format("d/m/Y H:m:s")}}</div>
                   <div class="col  p-2"><button data-bs-toggle="collapse" data-bs-target="#article-{{$item->id}}" aria-expanded="false" aria-controls="article-{{$item->id}}">show</button></div>
             </div>
 

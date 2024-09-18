@@ -19,80 +19,92 @@ class DatabaseSeeder extends Seeder
         // User::factory(10)->create();
 
         DB::table('user')->insert([
-            'username' => "lain",
-            'avatar' => "https://preview.redd.it/e8cqv5rgfvr91.jpg?auto=webp&s=0c85af69a65c64121a7024c3eb9ce05c222f49f5",
-            'email' => "a@a.fr", 
+            'username' => "admin",
+            'avatar' => "",
+            'email' => "admin@admin.fr", 
             'password' => Hash::make("aaaaaaaa"),
             "status" => "admin",
+            "created_at" => now(),
+            "updated_at" => now(),
         ]);
 
         DB::table("article")->insert([
-            'title' => "Yggdra_Union",
-            'intro' => "Yggdra Union: We'll Never Fight Alone[a] is a tactical role-playing game for the Game Boy Advance and PlayStation Portable, developed by Sting Entertainment as the second episode of the Dept. Heaven saga of games. Atlus USA localized and published both versions of the game in North America. 505 Games published the Game Boy Advance version in a limited number of European countries, such as Italy and France. A Nintendo DS side-game was released in Japan on December 3, 2009, as Yggdra Unison: Seiken Buyuuden. An updated version with bonus features was released in Japan for mobile platforms and Nintendo Switch in April 2019 and March 2020, respectively. A Windows version was released in early access on February 6, 2023, with a full release following on July 27, 2023, alongside a western release for Nintendo Switch.
-                        The game is a tactical RPG with an overhead view of a 2D map, managing miniature versions of the units. A card system dictating unit movement and potential skills plays into both enemy and ally turns, as well as the \"Union\" formation system, in which massive battles can take place between several platoons. There are also some real time elements included during actual battle sequences, such as being able to control how units attack the enemy.",
+            'title' => "C++",
+            'intro' => "C++ (/ˈsiː plʌs plʌs/, pronounced \"C plus plus\" and sometimes abbreviated as CPP) is a high-level, general-purpose programming language created by Danish computer scientist Bjarne Stroustrup. First released in 1985 as an extension of the C programming language, it has since expanded significantly over time; as of 1997, C++ has object-oriented, generic, and functional features, in addition to facilities for low-level memory manipulation for systems like microcomputers or to make operating systems like Linux or Windows. It is usually implemented as a compiled language, and many vendors provide C++ compilers, including the Free Software Foundation, LLVM, Microsoft, Intel, Embarcadero, Oracle, and IBM.[14]
+
+C++ was designed with systems programming and embedded, resource-constrained software and large systems in mind, with performance, efficiency, and flexibility of use as its design highlights.[15] C++ has also been found useful in many other contexts, with key strengths being software infrastructure and resource-constrained applications,[15] including desktop applications, video games, servers (e.g., e-commerce, web search, or databases), and performance-critical applications (e.g., telephone switches or space probes).[16]
+
+C++ is standardized by the International Organization for Standardization (ISO), with the latest standard version ratified and published by ISO in December 2020 as ISO/IEC 14882:2020 (informally known as C++20).[17] The C++ programming language was initially standardized in 1998 as ISO/IEC 14882:1998, which was then amended by the C++03, C++11, C++14, and C++17 standards. The current C++20 standard supersedes these with new features and an enlarged standard library. Before the initial standardization in 1998, C++ was developed by Stroustrup at Bell Labs since 1979 as an extension of the C language; he wanted an efficient and flexible language similar to C that also provided high-level features for program organization.[18] Since 2012, C++ has been on a three-year release schedule[19] with C++23 as the next planned standard.[20]",
             'locked' => 0,
             'user_id' => 1,
             "editor_id" => 1,
+            "created_at" => now(),
+            "updated_at" => now(),
         ]);
 
 
         DB::table("section")->insert([
-            "title" => "Gameplay",
-            "content" => "The game follows a linear succession of battles. Within each battle, units are displayed on a grid of spaces which decide where the characters can move. The player and the computer take turns in which movements are determined and one attack can be executed against an opposing character. The player may choose to end their turn at any time. Unions are the eponymous game play mechanic. Unlike most games, the player is allowed one attack per turn. Attacks are performed in formations called unions. Most unions involve multiple units, but it is possible to attack with a \"union\" of one unit. Forming unions allows more than one unit to join the battle, allowing for battles between as many as eighty soldiers, grouped into up to five individual battles between two units named 'clashes'. Depending on the gender of the unit, the formation required for a union will be different. Males have an x-shaped formation, whereas females have a plus-shaped formation. Linked unions, which become available during the fifteenth battlefield, allow units within the core union to apply their union pattern to extend the overall union.",
+            "title" => "History",
+            "content" => "In 1979, Bjarne Stroustrup, a Danish computer scientist, began work on \"C with Classes\", the predecessor to C++.[21] The motivation for creating a new language originated from Stroustrup's experience in programming for his PhD thesis. Stroustrup found that Simula had features that were very helpful for large software development, but the language was too slow for practical use, while BCPL was fast but too low-level to be suitable for large software development. When Stroustrup started working in AT&T Bell Labs, he had the problem of analyzing the UNIX kernel with respect to distributed computing. Remembering his PhD experience, Stroustrup set out to enhance the C language with Simula-like features.[22] C was chosen because it was general-purpose, fast, portable, and widely used. In addition to C and Simula's influences, other languages influenced this new language, including ALGOL 68, Ada, CLU, and ML.[citation needed]
+
+Initially, Stroustrup's \"C with Classes\" added features to the C compiler, Cpre, including classes, derived classes, strong typing, inlining, and default arguments.[23]
+A quiz on C++11 features being given in Paris in 2015
+
+In 1982, Stroustrup started to develop a successor to C with Classes, which he named \"C++\" (++ being the increment operator in C) after going through several other names. New features were added, including virtual functions, function name and operator overloading, references, constants, type-safe free-store memory allocation (new/delete), improved type checking, and BCPL-style single-line comments with two forward slashes (//). Furthermore, Stroustrup developed a new, standalone compiler for C++, Cfront.
+
+In 1984, Stroustrup implemented the first stream input/output library. The idea of providing an output operator rather than a named output function was suggested by Doug McIlroy[2] (who had previously suggested Unix pipes).
+
+In 1985, the first edition of The C++ Programming Language was released, which became the definitive reference for the language, as there was not yet an official standard.[24] The first commercial implementation of C++ was released in October of the same year.[21]
+
+In 1989, C++ 2.0 was released, followed by the updated second edition of The C++ Programming Language in 1991.[25] New features in 2.0 included multiple inheritance, abstract classes, static member functions, const member functions, and protected members. In 1990, The Annotated C++ Reference Manual was published. This work became the basis for the future standard. Later feature additions included templates, exceptions, namespaces, new casts, and a Boolean type.
+
+In 1998, C++98 was released, standardizing the language, and a minor update (C++03) was released in 2003.
+
+After C++98, C++ evolved relatively slowly until, in 2011, the C++11 standard was released, adding numerous new features, enlarging the standard library further, and providing more facilities to C++ programmers. After a minor C++14 update released in December 2014, various new additions were introduced in C++17.[26] After becoming finalized in February 2020,[27] a draft of the C++20 standard was approved on 4 September 2020, and officially published on 15 December 2020.[28][29]
+
+On January 3, 2018, Stroustrup was announced as the 2018 winner of the Charles Stark Draper Prize for Engineering, \"for conceptualizing and developing the C++ programming language\".[30]
+
+As of December 2022, C++ ranked third on the TIOBE index, surpassing Java for the first time in the history of the index. It ranks third, after Python and C.[31]",
             "article_id" => 1,
+            "created_at" => now(),
+            "updated_at" => now(),
 
-        ]);
+    ]);
 
         DB::table("section")->insert([
-            "title" => "Plot",
+            "title" => "Philosophy",
             "content" => 
-"######Story
+"Throughout C++'s life, its development and evolution has been guided by a set of principles:[22]
 
-The story of Yggdra Union starts with the Princess of Fantasinia, Yggdra, fleeing her besieged home with the family heirloom, the Holy Sword Gran Centurio. Throughout the story, the idea that justice lies with the Holy Sword[1] is used to drive Yggdra and her army forward through their plight, as well as to provide explanation to them for the acts they commit. It is constantly used as justification for their acts, particularly those situations in which civilians are slaughtered during the war.
-
-The story mainly details Yggdra's reclamation of her kingdom from the Bronquian Empire, and her eventual uniting of the entire world under her sovereignty, with quite a few stops along the way leading to an intricate and involving plot. The ending is split off based on the player's actions, one ending essentially being a game over and the other two being open ended with Yggdra either pursuing the ideal that justice lies with the holy sword, or sacrificing it to achieve universal peace.
-
-In the PSP version, additions were made to the story that further develop the Dept. Heaven universe and story, deeply tying the game into mythological elements first developed by Riviera, with the more direct appearance of Diviners, and Grim Angels, and passing mention of Malice, Hector and The Seven Magi. With the events of Yggdra Union's PSP ending where the Royal Army attack Ragnarok, this is now cemented into the canon storyline, marking Yggdra Union as a prequel to Riviera: The Promised Land.
-[home](/)",
+    - It must be driven by actual problems and its features should be immediately useful in real world programs.
+    - Every feature should be implementable (with a reasonably obvious way to do so).
+    - Programmers should be free to pick their own programming style, and that style should be fully supported by C++.
+    - Allowing a useful feature is more important than preventing every possible misuse of C++.
+    - It should provide facilities for organising programs into separate, well-defined parts, and provide facilities for combining separately developed parts.
+    - No implicit violations of the type system (but allow explicit violations; that is, those explicitly requested by the programmer).
+    - User-created types need to have the same support and performance as built-in types.
+    - Unused features should not negatively impact created executables (e.g. in lower performance).
+    - There should be no language beneath C++ (except assembly language).
+    - C++ should work alongside other existing programming languages, rather than fostering its own separate and incompatible programming environment.
+    - If the programmer's intent is unknown, allow the programmer to specify it by providing manual control.",
             "article_id" => 1,
+            "created_at" => now(),
+            "updated_at"=> now(),
         ]);
 
 
-        DB::table("image")->insert([
-            "path" => "https://upload.wikimedia.org/wikipedia/en/a/a1/Yggdra_Union_-_We%27ll_Never_Fight_Alone_Coverart.png",
-            "description" => "Cover art of the GBA version.",
-            "section_id" => 1,
-        ]);
-
-        DB::table("image")->insert([
-            "path" => "https://www.retroplace.com/pics/psp/packshots/136790--yggdra-union-well-never-fight-alone.png",
-            "description" => "Cover art of the PSP version.",
-            "section_id" => 1,
-        ]);
-
-        
-        DB::table("image")->insert([
-            "path" => "https://lparchive.org/Yggdra-Union/Update%2017/1-BF14-001.jpg",
-            "description" => "Map of the world",
-            "section_id" => 2,
-        ]);
-
-        DB::table("image")->insert([
-            "path" => "https://tcrf.net/images/d/d0/YggdraUnion-title.png",
-            "description" => "Title Screen",
+    DB::table("image")->insert(
+        [
+            "path" => "",
+            "text" => null,
+            "description" => "logo C++",
             "article_id" => 1,
+            "section_id" => null,
+            "created_at" => now(),
+            "updated_at"=> now(),
         ]);
 
-        DB::table("comment")->insert([
-            "post" => "everything seems to be in order, any thoughts?",
-            "user_id" => 1,
-            "article_id" => 1,
-        ]);
-
-        DB::table("comment")->insert([
-            "post" => "Will add more content when I get more free time, lol.",
-            "user_id" => 1,
-            "article_id" => 1,
-        ]);
     }
+
+
 }

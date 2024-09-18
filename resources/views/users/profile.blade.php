@@ -23,8 +23,9 @@
     <hr>
 </div>
 <div class="row">
-    <div class="col col-md-3  ms-0 p-0">
-        <img style="max-height: 128px;" class="img-fluid border" src="{{asset("storage/$user->avatar")}}" alt="{{$user->username}}'s avatar">
+    <div class="col col-md-2  d-flex flex-column ms-0 p-0">
+        <img class="img-fluid border" src="{{asset("storage/$user->avatar")}}" alt="{{$user->username}}'s avatar">
+        <a class="btn btn-success" href="/user/update/{{$user->username}}">Update</a>
     </div>
 
     <div class="col">

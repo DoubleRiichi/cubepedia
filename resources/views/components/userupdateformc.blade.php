@@ -8,25 +8,6 @@
                 <input class="form-control" type="text" name="username" value="{{$user->username}}" id="" required>
                 </div>   
             </div>
-            <div class="row mb-4">
-                <div class="col">
-                <label for="email">Email :</label>
-                <input class="form-control" type="email" name="email" value="{{$user->email}}" id="" required>
-                </div>   
-            </div>
-            <div class="row mb-4">
-                <div class="col">
-                <label for="password">Password :</label>
-                <input class="form-control" type="password" id="password" name="password" placeholder="password" required>
-                </div>
-            </div>
-
-            <div class="row mb-4">
-                <div class="col">
-                    <label for="password_confirmation">Confirm Password :</label>
-                    <input class="form-control" type="password" id="password_confirmation" name="password_confirmation" required>
-                </div>
-            </div>
 
             <div class="row mb-4">
                 <div class="col ">
@@ -34,6 +15,8 @@
                 <input class="form-control" class="fs-6" type="file" name="avatar" id="">
                 </div>
             </div>
+
+            <input hidden type="text" name="user_id" value="{{$user->id}}" id="">
 
             <div class="row">
                 <div class="col">

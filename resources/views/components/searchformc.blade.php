@@ -1,6 +1,6 @@
 <div class="row">
     <div class="col">
-        <form action="/admin/search" method="post" id="searchForm">
+        <form action="/search" method="post" id="searchForm">
             @csrf
             <div class="row mb-4">
                 <div class="col">
