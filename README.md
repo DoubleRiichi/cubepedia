@@ -1,4 +1,4 @@
-<p align="center"><img src="https://raw.githubusercontent.com/DoubleRiichi/cubepedia/develop/resources/img/cubepedia.png" width="400" alt="Movieshelter"></p>
+<p align="center"><img src="https://raw.githubusercontent.com/DoubleRiichi/cubepedia/main/resources/img/cubepedia.png?token=GHSAT0AAAAAACXV7ZLSBT3KYGICJTHGU6JGZXLAHFA" width="400" alt="Movieshelter"></p>
 
 # Introduction
 Cubepedia est un simple wiki clone capable de créer des article, de proposer un espace de discussion pour chacun d'entre eux et dispose de rôles utilisateurs régissant l'accès au contenu du site. 
