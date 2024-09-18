@@ -12,22 +12,28 @@
 
 @if(Auth::check() && Auth::user()->status == "admin")
     <div class="row">
-            <div class="col text-end">
+            <div class="col">
+                <button class="btn btn-success" type="button" data-bs-toggle="collapse" data-bs-target="#deleteForm"  aria-expanded="false" aria-controls="deleteForm">delete</button>
+
                 @if ($article->locked)
                     <button class="btn btn-success" type="button" data-bs-toggle="collapse" data-bs-target="#lockForm"  aria-expanded="false" aria-controls="lockForm">unlock</button>
                     <div class="collapse" id="lockForm">
-                        <x-adminformc id="{{$article->id}}" route="/admin/lock"/>
+                        <x-adminformc id="{{$article->id}}" route="/admin/unlock"/>
                     </div>
                 @else
                     <button class="btn btn-success" type="button" data-bs-toggle="collapse" data-bs-target="#unlockForm"  aria-expanded="false" aria-controls="unlockForm">lock</button>
                     <div class="collapse" id="unlockForm">
-                        <x-adminformc id="{{$article->id}}" route="/admin/unlock"/>
+                        <x-adminformc id="{{$article->id}}" route="/admin/lock"/>
                     </div>
                 @endif
+                <div class="collapse" id="deleteForm">
+                        <x-adminformc id="{{$article->id}}" route="/article/delete"/>
+                </div>
             </div>
+
     </div>
 @endif
-
+<hr>
 <div class="row">
     <div class="col border border-1 p-2" style="background-color: white;">
         {!! nl2br($article->intro) !!}
@@ -35,7 +41,7 @@
     @if($image)
         <div class="text-end col-md-4 col-lg-3 col-xl-2 text-center px-0">
             <div class="border p-2 bg-light">
-                <img class="object-fit-contain img-fluid" src="{{$image->path}}" alt="{{$image->description}}">
+                <img class="object-fit-contain img-fluid" src="{{asset("storage/$image->path")}}" alt="{{$image->description}}">
                 <p class="fs-6 pt-2 fst-italic ">{{$image->description}}</p>
             </div>
         </div>

@@ -22,8 +22,7 @@ class DiscussionController extends Controller
 
     public function show($id) {
 
-        $comments = DB::table("comment")
-                            ->join("article", "comment.article_id", "=", "article.id")
+        $comments = Comment::join("article", "comment.article_id", "=", "article.id")
                             ->join("user", "comment.user_id", "=", "user.id")
                             ->where("comment.article_id", "=", $id)
                             ->select("comment.*", "article.title", "user.username", "user.avatar", "user.status")->orderByDesc("comment.updated_at")->get();

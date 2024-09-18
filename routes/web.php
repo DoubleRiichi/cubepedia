@@ -1,9 +1,10 @@
 <?php
-
+//C'est plus une départementale c'est le perif
 use App\Http\Controllers\AdminActionController;
 use App\Http\Controllers\AdminPannelController;
 use App\Http\Controllers\AdminSearchController;
 use App\Http\Controllers\DiscussionController;
+use App\Http\Controllers\UpdateProfileController;
 use App\Http\Controllers\UserProfileController;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers;
@@ -12,6 +13,7 @@ use App\Http\Controllers\HomeController;
 use App\Http\Controllers\Auth\LoginController;
 use App\Http\Controllers\Auth\RegisterController;
 use App\Http\Controllers\RandomArticleController;
+
 
 Route::get("/wiki/{title}", [ArticleController::class, "show"]);
 Route::get("/random", [RandomArticleController::class, "show"]);
@@ -37,8 +39,16 @@ Route::post("/admin/ban", [AdminActionController::class, "ban"]);
 Route::post("/admin/unban", [AdminActionController::class, "unban"]);
 Route::post("/admin/lock", [AdminActionController::class, "lock"]);
 Route::post("/admin/unlock", [AdminActionController::class, "unlock"]);
+Route::post("/article/delete", [ArticleController::class, "delete"]);
 
-Route::get("/admin/search", [AdminSearchController::class, "show"]);
-Route::post("/admin/search", [AdminSearchController::class, "search"]);
+Route::get("/search", [AdminSearchController::class, "show"]);
+Route::post("/search", [AdminSearchController::class, "search"]);
 
 Route::get("/profile/{username}", [UserProfileController::class, "show"]);  
+
+Route::post("/user/update", [UpdateProfileController::class,"update"]);
+Route::get("/user/update/{username}", [UpdateProfileController::class,"show"]);
+
+
+Route::get("/wiki", [ArticleController::class, "new"]);
+Route::post("/wiki", [ArticleController::class, "write"]);

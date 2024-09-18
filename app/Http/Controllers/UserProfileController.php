@@ -5,7 +5,10 @@ namespace App\Http\Controllers;
 use App\Models\Article;
 use App\Models\Comment;
 use App\Models\User;
+use Egulias\EmailValidator\Result\ValidEmail;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Auth;
+use Illuminate\Support\Facades\Validator;
 
 class UserProfileController extends Controller
 {
@@ -41,4 +44,5 @@ class UserProfileController extends Controller
 
         return view("users.profile", compact("user", "user_articles", "user_comments"));
     }
+
 }

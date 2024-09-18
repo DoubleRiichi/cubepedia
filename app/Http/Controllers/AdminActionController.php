@@ -79,15 +79,16 @@ class AdminActionController extends Controller
     public function lock(Request $request) {
         if(AdminActionController::is_admin()) {
 
-            $article = Article::find($id);
+            $article = Article::find($request->id);
             
             if($article) {
                 $article->locked = true;
-                $article->save();
+                $article->save();   
+                $comment = htmlspecialchars($request->comment);
 
                 ModerationHistory::create([
                     "action" => "lock",
-                    "comment" => "Admin locked article $article->title.\n $request->comment",
+                    "comment" => "Admin locked article $article->title.\n $comment",
                     "user_id" => Auth::id(),
                 ]);
             }
@@ -105,10 +106,11 @@ class AdminActionController extends Controller
             if($article) {
                 $article->locked = true;
                 $article->save();
+                $comment = htmlspecialchars($request->comment);
 
                 ModerationHistory::create([
                     "action" => "unlock",
-                    "comment" => "Admin unlocked article $article->title.\n $request->comment",
+                    "comment" => "Admin unlocked article $article->title.\n $comment",
                     "user_id" => Auth::id(),
                 ]);
             }
@@ -125,10 +127,11 @@ class AdminActionController extends Controller
             if($comment) {
 
                 $comment->delete();
+                $reason = htmlspecialchars($request->comment);
 
                 ModerationHistory::create([
                     "action" => "delete",
-                    "comment" => "Admin deleted comment $comment->id.\n $request->comment",
+                    "comment" => "Admin deleted article  $comment->id.\n $reason",
                     "user_id" => Auth::id()
                 ]);
             }
@@ -155,9 +158,12 @@ class AdminActionController extends Controller
                    "user_id" => Auth::id()
                 ]);
 
+
+                $reason = htmlspecialchars($request->comment);
+
                 ModerationHistory::create([
                     "action"  => "revert",
-                    "comment" => "Admin restored $section->title.\n $request->comment",
+                    "comment" => "Admin restored $section->title.\n $reason",
                     "user_id" => Auth::id(),
                 ]);
             }

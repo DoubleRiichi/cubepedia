@@ -4,7 +4,7 @@
 
                 <div class="row border border-1 bg-white">
                     <div class="col text-start fw-lighter mt-0">
-                        {{$comment->created_at}} {{$comment->updated_at}}
+                        Posted on {{$comment->created_at->format("d/m/Y H:m:s")}} 
                     </div>
                     @if (Auth::check() && (Auth::id() == $comment->user_id || Auth::user()->status == "admin"))
 

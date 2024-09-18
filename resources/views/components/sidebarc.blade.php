@@ -1,4 +1,5 @@
 
+
     <div class="container-fluid p-0 d-flex flex-grow-1">
         <div id="bdSidebar" 
              class="d-flex flex-column 
@@ -38,30 +39,24 @@
                         Home
                     </a>
                 </li>
-@if(Auth::check())
+@if(Auth::check() && (Auth::user()->status == "editor" || Auth::user()->status == "admin"))
                 <li class="nav-item mb-1">
-                    <a href="#">
+                    <a href="/wiki">
                         <i class="fa-regular fa-bookmark"></i>
                         New Article
                     </a>
                 </li>
-                <li class="nav-item mb-1">
-                    <a href="#">
-                        <i class="fa-regular fa-newspaper"></i>
-                        Articles
-                    </a>
-                </li>
 @endif
-                <li class="nav-item mb-1">
-                    <a href="#">
-                        <i class="fa-solid fa-archway"></i>
-                        Discussions
-                    </a>
-                </li>
                 <li class="nav-item mb-1">
                     <a href="/random">
                         <i class="fa-solid fa-graduation-cap"></i>
                         Random Article
+                    </a>
+                </li>
+                <li class="nav-item mb-1">
+                    <a href="/search">
+                    <i class="fas fa-search pe-2"></i>
+                        Search
                     </a>
                 </li>
 @if(Auth::check())
@@ -74,7 +69,7 @@
                 </li>
     @endif
                 <li class="nav-item mb-1">
-                    <a href="#">
+                    <a href="/user/update/{{Auth::user()->username}}">
                     <i class="fas fa-cog pe-2"></i>
                         Settings
                     </a>
@@ -163,12 +158,13 @@
                         <li class="breadcrumb-item">
                             <i class="fa-solid fa-house"></i>
                         </li>
-                        @foreach ($current_url as $url_part)
-                        <li class="breadcrumb-item">{{$url_part}}</li>
-                        @endforeach
+                        @if(isset($current_url))
+                            @foreach ($current_url as $url_part)
+                            <li class="breadcrumb-item">{{$url_part}}</li>
+                            @endforeach
+                        @endif
   
                     </ol>
                 </nav>
-
-                <hr>
+<hr>
         <div class="col py-3 scroll-area">

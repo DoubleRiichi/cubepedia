@@ -6,13 +6,13 @@ use Closure;
 use Illuminate\Contracts\View\View;
 use Illuminate\View\Component;
 
-class userupdateformc extends Component
+class errorbox extends Component
 {
     /**
      * Create a new component instance.
      */
     public function __construct(
-        public $user,
+        public $errors
     )
     {
         //
@@ -23,6 +23,6 @@ class userupdateformc extends Component
      */
     public function render(): View|Closure|string
     {
-        return view('components.userupdateformc');
+        return view('components.error-box');
     }
 }

@@ -21,7 +21,7 @@ class HomeController extends Controller
         $this->markdownService = $markdownService;
     }
 
-    function show() {
+    public function show() {
 
 
         $recent_articles = Article::join("image", 'article.id', "=", "image.article_id")

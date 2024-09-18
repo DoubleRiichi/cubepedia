@@ -1,6 +1,6 @@
 <div class="row">
     <div class="col">
-        <form action="/admin/search" method="post" id="searchForm">
+        <form action="/search" method="post" id="searchForm">
             @csrf
             <div class="row mb-4">
                 <div class="col">
@@ -8,7 +8,9 @@
                     <select class="form-select" name="kind" id="searchOption" onchange="updateForm()">
                         <option value="none" selected>Select data to search</option>
                         <option value="user">Users</option>
-                        <option value="moderation_history">Moderation Log</option>
+                        @if (Auth::check() && Auth::user()->status == "admin")
+                        <option value="moderation_history">Moderation Log</option>                        
+                        @endif
                         <option value="comment">Comments</option>
                         <option value="article">Articles</option>
                     </select>

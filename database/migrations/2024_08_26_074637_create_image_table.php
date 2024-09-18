@@ -16,8 +16,8 @@ return new class extends Migration
             $table->string("path", 512);
             $table->string("text", 2000)->nullable();
             $table->string("description", 150);
-            $table->foreignId("section_id")->nullable()->references("id")->on("section");
-            $table->foreignId("article_id")->nullable()->references("id")->on("article");
+            $table->foreignId("section_id")->nullable()->references("id")->on("section")->cascadeOnDelete();
+            $table->foreignId("article_id")->nullable()->references("id")->on("article")->cascadeOnDelete();
 
             // $table->foreignId("section_index")->references("index")->on("section");
 

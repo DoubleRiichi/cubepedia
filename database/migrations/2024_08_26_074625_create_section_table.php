@@ -15,7 +15,8 @@ return new class extends Migration
             $table->id();
             $table->string("title", 255);
             $table->mediumText("content");
-            $table->foreignId('article_id')->references('id')->on("article");
+            $table->foreignId('article_id')->references('id')->on("article")
+            ->onDelete("Cascade");
             $table->timestamps();
         });
     }

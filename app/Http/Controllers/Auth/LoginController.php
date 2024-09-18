@@ -49,10 +49,11 @@ class LoginController extends Controller
  
             return redirect()->intended('/');
         }
- 
+        
+        
         return back()->withErrors([
             'username' => 'Wrong username',
-        ])->onlyInput('email');
+        ])->onlyInput('username');
     }
 
     public function logout(Request $request) {

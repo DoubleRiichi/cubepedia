@@ -18,7 +18,7 @@
                   </div>
                   <div class="col  p-2"><button data-bs-toggle="collapse" data-bs-target="#comment-{{$item->id}}" aria-expanded="false" aria-controls="comment-{{$item->id}}">Show</button></div>
                   <div class="col  p-2"><a href="/wiki/{{$item->title}}">{{$item->title}}</a></div>
-                  <div class="col  p-2"><a href="/wiki/{{$item->article_id}}/discussion#p-comment-{{$item->id}}">{{$item->created_at}}</a></div>
+                  <div class="col  p-2"><a href="/wiki/{{$item->article_id}}/discussion#p-comment-{{$item->id}}">{{$item->created_at->format("d/m/Y H:m:s")}}</a></div>
             </div>
 
             <div class="row">
