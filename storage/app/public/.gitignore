@@ -1,2 +1,6 @@
 *
 !.gitignore
+!default/
+!default/avatars/
+!default/CPP/
+!default/*

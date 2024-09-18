@@ -69,7 +69,7 @@
                 </li>
     @endif
                 <li class="nav-item mb-1">
-                    <a href="/profile/{{Auth::user()->username}}">
+                    <a href="/user/update/{{Auth::user()->username}}">
                     <i class="fas fa-cog pe-2"></i>
                         Settings
                     </a>

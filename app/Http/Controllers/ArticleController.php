@@ -74,7 +74,7 @@ class ArticleController extends Controller
             $validator = Validator::make($article_array, [
                 'title'  => "required|string|max:255|min:2|unique:article",
                 'intro'  => 'required|string|min:5',
-                'image'  => 'required|image|mimes:jpeg,png,jpg,gif,svg|max:2048',
+                'image'  => 'required|image|mimes:jpeg,png,jpg,gif,svg,webp|max:2048',
 
             ]);
     

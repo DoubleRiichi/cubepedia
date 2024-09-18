@@ -18,12 +18,12 @@
                 @if ($article->locked)
                     <button class="btn btn-success" type="button" data-bs-toggle="collapse" data-bs-target="#lockForm"  aria-expanded="false" aria-controls="lockForm">unlock</button>
                     <div class="collapse" id="lockForm">
-                        <x-adminformc id="{{$article->id}}" route="/admin/lock"/>
+                        <x-adminformc id="{{$article->id}}" route="/admin/unlock"/>
                     </div>
                 @else
                     <button class="btn btn-success" type="button" data-bs-toggle="collapse" data-bs-target="#unlockForm"  aria-expanded="false" aria-controls="unlockForm">lock</button>
                     <div class="collapse" id="unlockForm">
-                        <x-adminformc id="{{$article->id}}" route="/admin/unlock"/>
+                        <x-adminformc id="{{$article->id}}" route="/admin/lock"/>
                     </div>
                 @endif
                 <div class="collapse" id="deleteForm">
