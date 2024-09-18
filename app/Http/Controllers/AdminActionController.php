@@ -79,7 +79,7 @@ class AdminActionController extends Controller
     public function lock(Request $request) {
         if(AdminActionController::is_admin()) {
 
-            $article = Article::find($id);
+            $article = Article::find($request->id);
             
             if($article) {
                 $article->locked = true;
@@ -131,7 +131,7 @@ class AdminActionController extends Controller
 
                 ModerationHistory::create([
                     "action" => "delete",
-                    "comment" => "Admin deleted comment $comment->id.\n $reason",
+                    "comment" => "Admin deleted article  $comment->id.\n $reason",
                     "user_id" => Auth::id()
                 ]);
             }
