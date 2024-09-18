@@ -11,4 +11,12 @@ class Article extends Model
     protected $primaryKey = "id";
 
     use HasFactory;
+
+    protected $fillable = [
+        "title",
+        "intro",
+        "locked",
+        "user_id",
+        "editor_id",
+    ];
 }

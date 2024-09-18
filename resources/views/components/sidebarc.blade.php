@@ -39,26 +39,14 @@
                         Home
                     </a>
                 </li>
-@if(Auth::check())
+@if(Auth::check() && (Auth::user()->status == "editor" || Auth::user()->status == "admin"))
                 <li class="nav-item mb-1">
-                    <a href="#">
+                    <a href="/wiki">
                         <i class="fa-regular fa-bookmark"></i>
                         New Article
                     </a>
                 </li>
-                <li class="nav-item mb-1">
-                    <a href="#">
-                        <i class="fa-regular fa-newspaper"></i>
-                        Articles
-                    </a>
-                </li>
 @endif
-                <li class="nav-item mb-1">
-                    <a href="#">
-                        <i class="fa-solid fa-archway"></i>
-                        Discussions
-                    </a>
-                </li>
                 <li class="nav-item mb-1">
                     <a href="/random">
                         <i class="fa-solid fa-graduation-cap"></i>
@@ -81,7 +69,7 @@
                 </li>
     @endif
                 <li class="nav-item mb-1">
-                    <a href="#">
+                    <a href="/user/update/{{Auth::user()->username}}">
                     <i class="fas fa-cog pe-2"></i>
                         Settings
                     </a>
