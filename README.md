@@ -1,10 +1,9 @@
 <p align="center"><img src="https://raw.githubusercontent.com/DoubleRiichi/cubepedia/main/resources/img/cubepedia.png?token=GHSAT0AAAAAACXV7ZLSBT3KYGICJTHGU6JGZXLAHFA" width="400" alt="Movieshelter"></p>
 
 # Introduction
-Cubepedia est un simple wiki clone capable de créer des article, de proposer un espace de discussion pour chacun d'entre eux et dispose de rôles utilisateurs régissant l'accès au contenu du site. 
+Cubepedia est un simple wiki clone capable de créer des articles, de proposer un espace de discussion pour chacun d'entre eux et dispose de rôles utilisateurs régissant l'accès au contenu du site.
 
-Les articles sont composés d'une introduction et d'un nombre variable de sections, associés à un nombre variable d'image. Seul les rôles "editor" et "admin" peuvent avoir accès à la rédaction d'articles 
-Le projet utilise les technologies suivantes :  
+Les articles sont composés d'une introduction et d'un nombre variable de sections, associés à un nombre variable d'image. Seul les rôles "editor" et "admin" peuvent avoir accès à la rédaction d'articles Le projet utilise les technologies suivantes :
 
 ### Frontend : 
 
