@@ -50,7 +50,7 @@ class AdminSearchController extends Controller
         }
 
         if(in_array($request->action, ["ban", "unban", "lock", "unlock", "revert"])) {
-            array_push($parameters, ["moderation_history.status", "=", $request->status]);
+            array_push($parameters, ["moderation_history.action", "=", $request->action]);
         }
         
         return ModerationHistory::where($parameters)->get();
@@ -84,8 +84,8 @@ class AdminSearchController extends Controller
     private function articleSearch(Request $request) {
         $parameters = [];
 
-        if($request->comment) {
-            array_push($parameters, ["article.post", "LIKE", "%$request->comment%"]);
+        if($request->title) {
+            array_push($parameters, ["article.title", "LIKE", "%$request->title%"]);
         }
 
         if($request->dateOn) {

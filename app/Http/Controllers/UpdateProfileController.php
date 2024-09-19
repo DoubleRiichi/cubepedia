@@ -16,8 +16,6 @@ class UpdateProfileController extends Controller
 
     public function show($username) {
 
-        
-
         $user = User::where("username", "=", $username)->first(); 
 
         if(!$user) {
@@ -25,12 +23,10 @@ class UpdateProfileController extends Controller
         }
 
         if(Auth::check() && (Auth::user()->id == $user->id || Auth::user()->status == "admin")) {
-
-
   
             return view("users.update", compact("user"));
         } else {
-            redirect()->back();
+            redirect("/profile/$username");
         }
     }
 
