@@ -37,39 +37,40 @@ class UpdateProfileController extends Controller
 
     public function update(Request $request) {
 
-        if(!Auth::check() || Auth::user()->id != $request->user_id || Auth::user()->status != "admin") {
-            return redirect()->back();
-        }
-
-        $validator = Validator::make($request->all(), [
-            "username" => 'required|string|min:4|max:32',
-        ]);
-
-        if($validator->fails()) {
-            return redirect()->back()->withErrors($validator)->withInput();
-        }
-
-        $user = User::find($request->user_id);
-        $user->username = $request->username;
-
-        if($request->hasFile("avatar")) {
+        if(Auth::check() && (Auth::user()->id == $request->user_id || Auth::user()->status == "admin")) {
+        
 
             $validator = Validator::make($request->all(), [
-                "avatar" => 'nullable|image|mimes:jpeg,png,jpg,gif,svg|max:2048',
+                "username" => 'required|string|min:4|max:32',
             ]);
-
 
             if($validator->fails()) {
                 return redirect()->back()->withErrors($validator)->withInput();
             }
 
-            $path = $request->file("avatar")->store("avatars", "public");
-            $user->avatar = $path; 
+            $user = User::find($request->user_id);
+            $user->username = $request->username;
+
+            if($request->hasFile("avatar")) {
+
+                $validator = Validator::make($request->all(), [
+                    "avatar" => 'nullable|image|mimes:jpeg,png,jpg,gif,svg|max:2048',
+                ]);
+
+
+                if($validator->fails()) {
+                    return redirect()->back()->withErrors($validator)->withInput();
+                }
+
+                $path = $request->file("avatar")->store("avatars", "public");
+                $user->avatar = $path; 
+            }
+
+            $user->save();
+
+            return redirect("/profile/$user->username");
+        } else {
+            return redirect()->back();
         }
-
-        $user->save();
-
-        return redirect("/profile/$user->username");
-
     }
 }
